@@ -17,4 +17,27 @@ public class Schedule extends BaseEntity {
         this.details = details;
     }
 
+    public long getVehicleID() {
+        return vehicleID;
+    }
+
+    public void setVehicleID(long vehicleID) {
+        this.vehicleID = vehicleID;
+    }
+
+    public Date getMaintenanceDate() {
+        return maintenanceDate;
+    }
+
+    public void setMaintenanceDate(Date maintenanceDate) {
+        this.maintenanceDate = maintenanceDate;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
 }

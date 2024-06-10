@@ -38,7 +38,6 @@ public class DeliveryDrone extends Vehicle implements AutonomousVehicle {
 
     @Override
     public void updateLocation(LocationType<Long, Long> newLocation) {
-
     }
 
     public void loadPayload(double weight){}

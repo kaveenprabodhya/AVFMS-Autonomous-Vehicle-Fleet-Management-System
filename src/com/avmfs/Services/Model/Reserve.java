@@ -1,17 +1,15 @@
 package com.avmfs.Services.Model;
 
-import com.avmfs.VehicleManagement.AutonomousVehicle;
-
 public class Reserve extends BaseEntity {
     private boolean cancel;
     private Route route;
     private Person person;
-    private AutonomousVehicle vehicle;
+    private Vehicle vehicle;
 
     public Reserve() {
     }
 
-    public Reserve(long id, boolean cancel, Route route, Person person, AutonomousVehicle vehicle) {
+    public Reserve(long id, boolean cancel, Route route, Person person, Vehicle vehicle) {
         super(id);
         this.cancel = cancel;
         this.route = route;
@@ -43,11 +41,11 @@ public class Reserve extends BaseEntity {
         this.person = person;
     }
 
-    public AutonomousVehicle getVehicle() {
+    public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(AutonomousVehicle vehicle) {
+    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 }
