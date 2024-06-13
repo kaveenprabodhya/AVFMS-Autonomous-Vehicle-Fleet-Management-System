@@ -1,10 +1,12 @@
 package com.avmfs.Services.Model;
 
+import com.avmfs.Utility.FleetingStatus;
 import com.avmfs.Utility.VehicleStatus;
 
 public class Vehicle extends BaseEntity{
     private String model;
     private VehicleStatus status;
+    private FleetingStatus fleetingStatus;
 
     public Vehicle() {
     }
@@ -13,6 +15,7 @@ public class Vehicle extends BaseEntity{
         super(id);
         this.model = model;
         this.status = status;
+        this.fleetingStatus = null;
     }
 
     public String getModel() {
@@ -29,5 +32,13 @@ public class Vehicle extends BaseEntity{
 
     public void setStatus(VehicleStatus status) {
         this.status = status;
+    }
+
+    public FleetingStatus getFleetingStatus() {
+        return fleetingStatus;
+    }
+
+    public void setFleetingStatus(FleetingStatus fleetingStatus) {
+        this.fleetingStatus = fleetingStatus;
     }
 }

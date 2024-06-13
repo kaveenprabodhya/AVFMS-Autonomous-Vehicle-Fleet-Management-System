@@ -1,10 +1,10 @@
 package com.avmfs.Utility;
 
-public class LocationType<X, Y> {
-    public final X x;
-    public final Y y;
+public class Location<X, Y> {
+    private final X x;
+    private final Y y;
 
-    LocationType(X x, Y y){
+    Location(X x, Y y){
         this.x = x;
         this.y = y;
     }

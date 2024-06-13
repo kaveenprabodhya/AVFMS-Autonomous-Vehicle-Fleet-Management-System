@@ -1,9 +1,9 @@
 package com.avmfs.VehicleManagement;
 
 import com.avmfs.Services.Model.Vehicle;
-import com.avmfs.Utility.LocationType;
+import com.avmfs.Utility.Location;
 
-public class SelfDriving extends Vehicle implements AutonomousVehicle {
+public final class SelfDriving extends Vehicle implements AutonomousVehicle {
     private int passengerCapacity;
     private int currentPassengers;
 
@@ -37,7 +37,7 @@ public class SelfDriving extends Vehicle implements AutonomousVehicle {
     }
 
     @Override
-    public void updateLocation(LocationType<Long, Long> newLocation) {
+    public void updateLocation(Location<Long, Long> newLocation) {
 
     }
 

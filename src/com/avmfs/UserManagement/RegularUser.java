@@ -6,6 +6,8 @@ import com.avmfs.Services.PersonService;
 import com.avmfs.Services.ReservationService;
 import com.avmfs.Utility.UserRole;
 
+import java.util.List;
+
 public class RegularUser extends Person {
 
     private final PersonService personService;
@@ -17,9 +19,20 @@ public class RegularUser extends Person {
         this.reservationService = reservationService;
     }
 
-    public void bookVehicle(Reserve reserve){}
+    public void bookVehicle(Reserve reserve){
+        this.reservationService.save(reserve);
+    }
 
-    public void cancelBooking(Reserve reserve){}
+    public void cancelBooking(long reservationId){
+        Reserve reserve = this.reservationService.findByUsernameAndReservationId(this.getEmail(),this.getId());
+        if(reserve == null){
+            throw new RuntimeException("Reservation not found!");
+        }
+        reserve.setCancel(true);
+        this.reservationService.save(reserve);
+    }
 
-    public void viewBookings(){}
+    public List<Reserve> viewBookings(){
+        return this.reservationService.findAllByUsername(this.getEmail());
+    }
 }

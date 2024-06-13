@@ -80,7 +80,6 @@ public class FleetManager extends Person {
 
     // Manage Bookings
     // crud bookings
-    // TODO validations of Vehicle, Person, Route
     public void addReservation(Reserve reserve){
         reservationService.save(reserve);
     }
