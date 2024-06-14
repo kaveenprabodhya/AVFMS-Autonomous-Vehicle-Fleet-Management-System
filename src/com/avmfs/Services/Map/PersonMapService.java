@@ -34,4 +34,14 @@ public class PersonMapService extends AbstractMapService<Person, Long> implement
     public void delete(Person object) {
         super.delete(object);
     }
+
+    @Override
+    public Person findByUsername(String username) {
+        for (Person person: this.map.values()){
+            if(person.getEmail().equalsIgnoreCase(username)){
+                return person;
+            }
+        }
+        return null;
+    }
 }

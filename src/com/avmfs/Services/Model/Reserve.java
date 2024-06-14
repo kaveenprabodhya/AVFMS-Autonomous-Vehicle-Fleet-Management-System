@@ -48,4 +48,15 @@ public class Reserve extends BaseEntity {
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
+
+    @Override
+    public String toString() {
+        return "Reserve{" +
+                "id=" + this.getId() +
+                ", cancel=" + cancel +
+                ", route=" + route.getId() +
+                ", person=" + person.getEmail() +
+                ", vehicle=" + vehicle.getModel() +
+                '}';
+    }
 }

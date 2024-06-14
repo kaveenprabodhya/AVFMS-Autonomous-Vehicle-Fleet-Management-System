@@ -8,6 +8,7 @@ public class Person extends BaseEntity {
     private String email;
     private String password;
     private UserRole role;
+    private Token token;
 
     public Person() {
     }
@@ -19,6 +20,7 @@ public class Person extends BaseEntity {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.token = null;
     }
 
     public String getFirstName() {
@@ -59,5 +61,25 @@ public class Person extends BaseEntity {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+
+    public Token getToken() {
+        return token;
+    }
+
+    public void setToken(Token token) {
+        this.token = token;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + this.getId() +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

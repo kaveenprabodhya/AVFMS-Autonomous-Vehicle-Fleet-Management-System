@@ -40,4 +40,14 @@ public class Schedule extends BaseEntity {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "id=" + this.getId() +
+                ", vehicleID=" + vehicleID +
+                ", maintenanceDate=" + maintenanceDate +
+                ", details='" + details + '\'' +
+                '}';
+    }
 }

@@ -51,4 +51,14 @@ public class Route extends BaseEntity {
         this.estimatedTime = estimatedTime;
     }
 
+    @Override
+    public String toString() {
+        return "Route{" +
+                "id='" + this.getId() + '\'' +
+                ", origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", distance=" + distance +
+                ", estimatedTime=" + estimatedTime +
+                '}';
+    }
 }
