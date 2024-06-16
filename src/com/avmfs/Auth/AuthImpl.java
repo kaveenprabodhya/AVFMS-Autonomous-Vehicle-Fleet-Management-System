@@ -3,17 +3,24 @@ package com.avmfs.Auth;
 import com.avmfs.Services.Model.Person;
 import com.avmfs.Services.Model.Token;
 import com.avmfs.Services.PersonService;
+import com.avmfs.Utility.UserRole;
 
 public class AuthImpl implements Auth {
 
     private final PersonService personService;
+    private final Person currentUser;
 
-    public AuthImpl(PersonService personService) {
+    public AuthImpl(PersonService personService, Person currentUser) {
         this.personService = personService;
+        this.currentUser = currentUser;
     }
 
     @Override
-    public void register(String username, String password) {
+    public void register(String firstName, String lastName, String email, String password, UserRole userRole) {
+        Person user = new Person(null, firstName, lastName, email, password, userRole);
+        Person savedUser = personService.save(user);
+        Token token = new Token(user.getId());
+        savedUser.setToken(token);
     }
 
     @Override
@@ -25,7 +32,7 @@ public class AuthImpl implements Auth {
     }
 
     @Override
-    public void logout(Person currentUser) {
-        currentUser.setToken(null);
+    public void logout() {
+        this.currentUser.setToken(null);
     }
 }
